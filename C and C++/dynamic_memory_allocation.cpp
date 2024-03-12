@@ -67,7 +67,7 @@ void dynamic_malloc()
 
 void dynamic_realloc()
 {
-    cout << "************************  Implementing malloc() ********************\n\n";
+    cout << "************************  Implementing relloc() ********************\n\n";
     float *ptr, *new_ptr;
     int n;
     float sum = 0, avg = 0;
@@ -75,27 +75,42 @@ void dynamic_realloc()
     cout << "Enter the size of Array: " << endl;
     cin >> n;
     ptr = (float *)malloc(n * sizeof(float));
-    cout << "Enter the elements of array :" << endl;
+    cout << "Enter the elements of base array :" << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> ptr[i];
     }
 
-    for (int i = 0; i < n; i++)
+    int new_size;
+    cout << "\nEnter the size of array to resize: " << endl;
+    cin >> new_size;
+    new_ptr = (float *)realloc(ptr, new_size);
+    cout << "Enter the elements to newly resized array :" << endl;
+    for (int i = 0; i < new_size; i++)
     {
-        sum += ptr[i];
+        cin >> new_ptr[i];
+    }
+
+    for (int i = 0; i < new_size; i++)
+    {
+        sum += new_ptr[i];
         avg = sum / n;
     }
-    cout << "\nThe elements in the array are: ";
+    cout << "\nThe elements in the old array with size " << n << " are: ";
     for (int i = 0; i < n; i++)
     {
         cout << ptr[i] << " ";
     }
+    cout << "\nThe elements in the new array with size " << new_size << " are: ";
+    for (int i = 0; i < new_size; i++)
+    {
+        cout << new_ptr[i] << " ";
+    }
 
-    cout << "\nThe total sum of elements of array with dynamic size " << n << " is: " << sum << endl;
+    cout << "\nThe total sum of elements of array with dynamic size " << new_size << " is: " << sum << endl;
     cout << "The average of elements of array is: " << avg << endl;
 
-    free(ptr);
+    free(new_ptr);
 }
 
 int main()
@@ -118,7 +133,7 @@ int main()
         dynamic_malloc();
         break;
     case 3:
-        // Do something for choice 3
+        dynamic_realloc();
         break;
     case 4:
         cout << "Program Terminated. Sorry to see you go !!!";
