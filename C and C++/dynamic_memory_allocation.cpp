@@ -32,7 +32,7 @@ void dynamic_calloc()
     cout << "\nThe total sum of elements of array with dynamic size " << n << " is: " << sum << endl;
     cout << "The average of elements of array is: " << avg << endl;
 
-    free(ptr)
+    free(ptr);
 }
 
 void dynamic_malloc()
