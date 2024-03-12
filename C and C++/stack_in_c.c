@@ -8,7 +8,7 @@ int items;
 
 int push()
 {
-    if (top > max_capcity - 1){
-        
+    if (top > max_capcity - 1)
+    {
     }
 }
