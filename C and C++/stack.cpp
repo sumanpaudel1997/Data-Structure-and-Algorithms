@@ -1,7 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int arr[];
+
+const int MAX_SIZE;
+
+int isEmpty()
 {
-    return 0;
+    if (size(arr) == arr_size){
+        return 1
+    }
 }
