@@ -9,10 +9,11 @@ class Stack():
     
     def __init__(self, size):
         self.stack = []
-        self.size = []
+        self.size = size
+        self.top = -1
 
     def is_empty(self):
-        if not self.stack:
+        if not self.stack and self.top == -1:
             return "Stack Underflow. Stack is Empty !!!"
     
     def is_full(self):
@@ -34,8 +35,8 @@ class Stack():
     
 sp = Stack(5)
 
-sp.push(5)
-sp.pop()
+# sp.push()
+# sp.pop()
 print(sp.peek())
 
 # print(is_empty())
